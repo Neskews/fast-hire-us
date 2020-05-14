@@ -3,7 +3,7 @@
 [x] Create a request
 [x] Create a band
 [x] Assign request and band
-[ ] Prevent duplicate assignments
+[x] Prevent duplicate assignments
 [ ] Enable views
 [ ] Create basic identification for band
 [ ] Create basic identification for request
@@ -15,6 +15,7 @@
 # MongoDB
 See https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 
+## Operations
 Start:
 `sudo systemctl start mongod`
 
@@ -23,6 +24,9 @@ Stop:
 
 Restart:
 `sudo systemctl restart mongod`
+
+## URI
+The URI is stored in `.env` in as `MONGODB_URI`
 
 # Contexts
 There are following contexts:

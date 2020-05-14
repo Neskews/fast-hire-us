@@ -9,6 +9,6 @@ import { ConfigModule } from "@nestjs/config";
   imports: [
     RequestModule,
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.DB), RequestModule, BandModule, AssignmentModule],
+    MongooseModule.forRoot(process.env.MONGODB_URI), RequestModule, BandModule, AssignmentModule],
 })
 export class AppModule {}
