@@ -1,0 +1,1 @@
+curl -d "priceMin=800&priceMax=1000&email=def@web.de" -X POST http://localhost:3000/request/create

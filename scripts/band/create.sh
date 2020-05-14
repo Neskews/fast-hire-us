@@ -1,0 +1,1 @@
+curl -d "email=band@mail.de" -X POST http://localhost:3000/band/create
