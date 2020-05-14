@@ -1,0 +1,16 @@
+style
+    include styles/form.css
+
+section
+    h2 Für deine Veranstaltung
+    p Du brauchst eine preiswerte Band, die diesen einen bestimmen Song kann. Es soll einen Saxophinsten geben? Hier kannst du die mühelos deine Wunschband zusammenstellen. Wir suchen dir anschließend genau die passende Band zu einem unschlagbaren Preis.
+
+
+    form(method="POST" action="/request/create")
+        label
+            | Maximaler Preis (€)
+            input(type="number" name="priceMax" value=150 min=20 step=1 required)
+        label
+            | Deine E-Mail-Adresse
+            input(type="email" name="email" placeholder="Max.Muster@example.com" required)
+        input(type="submit" value="Band finden")

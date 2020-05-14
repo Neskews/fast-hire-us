@@ -17,6 +17,10 @@ export class BandService implements Urified {
     }
 
     async create(band: Band) {
+        const existantBand = await this.bandModel.findOne({ email: band.email });
+
+        if (existantBand) return existantBand; 
+
         const createdBand = new this.bandModel({ ...band, uri: this.getUri() });
 
         return createdBand.save();

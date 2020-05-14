@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="de")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=500, initial-scale=1.0")
+        title Anfrage eingegangen
+        meta(name="description", content="Deine Anfrage ist bei uns eingegangen")
+        include ../_links
+        style
+            include styles/readonly.css
+            include ../styles/main.css
+            include ../styles/section.css
+            include ../styles/background.css
+            include ../styles/heading.css
+    body
+        main
+            section
+                h1 Deine Anfrage ist bei uns eingegagen.
+                p Bei uns registrierte Bands haben nach bestimmten Kriterien eine Anfrage erhalten. Sobald du ein Angebot erhälst, erscheint es hier.
+                h2 Über deine Anfrage:
+                p Mit der von dir angegebenen Mail kannst du wieder auf deine Anfrage zugreifen. Logge dich einfach wieder mit ihr ein.
+                input(type="email" value=request.email readonly)

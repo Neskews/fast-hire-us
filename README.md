@@ -33,3 +33,8 @@ There are following contexts:
 - `assignment`: Assign bands and requests to each other
 - `request`: Create and read requests
 - `band`: Create and read bands
+
+# Colors
+- Primary: #1e88e5
+- Light: #6ab7ff
+- Dark: #005cb2

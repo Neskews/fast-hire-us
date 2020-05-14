@@ -18,7 +18,9 @@ export class RequestService implements Urified {
     }
 
     async create(requestDto: Request): Promise<Request> {
-        console.log(requestDto);
+        const existantRequest = await this.requestmodel.findOne({ email: requestDto.email });
+
+        if (existantRequest) return existantRequest;
         
         const createdRequest = new this.requestmodel({ ...requestDto, uri: this.getUri() });
 

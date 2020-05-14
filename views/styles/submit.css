@@ -1,0 +1,12 @@
+input[type=submit] {
+    background-color: #005cb2;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}

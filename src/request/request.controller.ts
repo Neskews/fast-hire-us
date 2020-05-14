@@ -1,6 +1,7 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Res } from '@nestjs/common';
 import { RequestService } from './request.service';
 import { assertIsRequest } from './assertions/assertIsRequest';
+import { Response } from 'express';
 
 @Controller('request')
 export class RequestController {
@@ -16,11 +17,13 @@ export class RequestController {
 
     @Post("create")
     async create(
-        @Body() request: any 
+        @Body() request: any,
+        @Res() response: Response
     ) {
         try {
             assertIsRequest(request);
-            await this.requestService.create(request)
+            await this.requestService.create(request);
+            await response.render("request/created", { request });
         } catch (error) {
             return "something went wrong";
         }
