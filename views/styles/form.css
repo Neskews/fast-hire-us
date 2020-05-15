@@ -2,7 +2,10 @@ label {
     display: flex;
     width: 100%;
     max-width: 500px;
-    justify-content:space-between;
+    justify-content: space-between;
+    margin-top: 12px;
+    align-items: baseline;
+    
 }
 
 @media (max-width: 500px) {
