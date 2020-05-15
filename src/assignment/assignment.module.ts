@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { AssignmentService } from './assignment.service';
 import { RequestModule } from 'src/request/request.module';
 import { BandModule } from 'src/band/band.module';
@@ -10,9 +10,10 @@ import { AssignmentSchema } from './schemas/assignment.schema';
   providers: [AssignmentService],
   imports: [
     RequestModule,
-    BandModule,
+    forwardRef(() => BandModule),
     MongooseModule.forFeature([{name: "Assignment", schema: AssignmentSchema}])
   ],
-  controllers: [AssignmentController]
+  controllers: [AssignmentController],
+  exports: [AssignmentService]
 })
 export class AssignmentModule {}

@@ -1,14 +1,15 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject, forwardRef } from '@nestjs/common';
 import { BandService } from 'src/band/band.service';
 import { RequestService } from 'src/request/request.service';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Assignment } from './interfaces/assignment.interface';
+import { BandUri } from "./interfaces/uri.interface";
 
 @Injectable()
 export class AssignmentService {
     constructor(
-        private readonly bandService: BandService,
+        @Inject(forwardRef(() => BandService)) private readonly bandService: BandService,
         private readonly requestService: RequestService,
         @InjectModel("Assignment") private assignmentModel: Model<Assignment>
     ) { }
@@ -30,6 +31,10 @@ export class AssignmentService {
                 }
             });
         });
+    }
+
+    async findByBandUri(bandUri: BandUri) {
+        return await this.assignmentModel.find({ band: bandUri.uri });
     }
 
     async isExistant(assignment) {

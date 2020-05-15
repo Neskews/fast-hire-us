@@ -4,13 +4,16 @@
 [x] Create a band
 [x] Assign request and band
 [x] Prevent duplicate assignments
-[ ] Enable views
-[ ] Create basic identification for band
-[ ] Create basic identification for request
+[x] Enable views
+[x] Create basic identification for band
+[x] Create basic identification for request
 [ ] Save credentials as cookie
 [ ] Show request to band
 [ ] Let the band make an offer
 [ ] Let the cusomter accept the offer
+
+## Version 0.2
+[ ] Add password for band authentication
 
 # MongoDB
 See https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
@@ -25,6 +28,9 @@ Stop:
 Restart:
 `sudo systemctl restart mongod`
 
+Status:
+`sudo systemctl status mongod`
+
 ## URI
 The URI is stored in `.env` in as `MONGODB_URI`
 
@@ -33,6 +39,7 @@ There are following contexts:
 - `assignment`: Assign bands and requests to each other
 - `request`: Create and read requests
 - `band`: Create and read bands
+- `auth`: Basic authentication system
 
 # Colors
 - Primary: #1e88e5

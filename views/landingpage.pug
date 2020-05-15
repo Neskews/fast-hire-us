@@ -6,18 +6,20 @@ html(lang="de")
         meta(name="description", content="Jetzt DIE Band für deine Veranstaltung finden")
         title Hire Us
         style
-            include font.css
             include styles/main.css
             include styles/background.css
             include styles/submit.css
             include styles/heading.css
-            include styles/heading.css
-        include _links
+            include styles/section.css
     body
         main
             h1 Hire Us
 
             include _request
-            include _band
+            
+            h2 Du bist eine Band?
+            p Jetzt 
+                a(href="/band") registrieren
+                |  und direkt Anfragen erhalten.
 
             

@@ -4,3 +4,13 @@ label {
     max-width: 500px;
     justify-content:space-between;
 }
+
+@media (max-width: 500px) {
+    label {
+        flex-direction: column;
+    }   
+}
+
+input {
+    padding: 12px 24px;
+}

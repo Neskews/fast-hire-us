@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html(lang="de")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=500, initial-scale=1.0")
+        meta(name="description", content="Jetzt DIE Band für deine Veranstaltung finden")
+        title Hire Us
+        style
+            include styles/main.css
+            include styles/background.css
+            include styles/submit.css
+            include styles/heading.css
+            include styles/section.css
+            include styles/form.css
+    body
+        main
+            section
+                h2 Für Bands
+                p Jetzt einen kostenlosen Band-Account erstellen und direkt Anfragen bekommen.
+
+                form(method="POST" action="/band/create")
+                    include _band-login-mask
+                    input(type="submit" value="kostenlos registrieren")
+            section
+                h2 Login
+                p Bereits registriert? Hier einloggen.
+                form(method="POST" action="/band/dashboard")
+                    include _band-login-mask
+                    input(type="submit" value="einloggen")

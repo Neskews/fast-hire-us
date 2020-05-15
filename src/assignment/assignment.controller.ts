@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AssignmentService } from './assignment.service';
+import { assertIsBandUri } from './assertions/isBandUri.assertion';
 
 @Controller('assignment')
 export class AssignmentController {
@@ -23,5 +24,13 @@ export class AssignmentController {
         } catch (error) {
             return error;
         }
+    }
+
+    @Post("band")
+    async getAssignmentByBand(
+        @Body() bandUri: any,
+    ) {
+        assertIsBandUri(bandUri);
+        return await this.assignmentService.findByBandUri(bandUri);
     }
 }

@@ -14,3 +14,12 @@ section
             | Deine E-Mail-Adresse
             input(type="email" name="email" placeholder="Max.Muster@example.com" required)
         input(type="submit" value="Band finden")
+
+section
+    h2 Login
+    p Du hast bereits eine Anfrage gestellt? Hier den aktuellen Status abfragen.
+    form(method="POST" action="/request/dashboard")
+        label
+            | E-Mail-Adresse
+            input(type="email" name="email" placeholder="Max.Muster@example.com" required)
+        input(type="submit" value="einloggen")
