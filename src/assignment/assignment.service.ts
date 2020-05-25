@@ -45,4 +45,13 @@ export class AssignmentService {
         return await this.assignmentModel.find();
     }
 
+    async findByEmail(email: string) {
+        const requests = await this.requestService.findByEmail(email);
+
+        return await Promise.all(
+            requests.filter(async ({ uri: request }) => {
+                return await this.assignmentModel.find({ request });
+            })
+        );
+    }
 }

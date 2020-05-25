@@ -1,0 +1,6 @@
+h2 Gesendete Anfragen
+p Folgende Anfragen haben wir bereits an alle in Frage kommenden Bands weitergeleitet:
+each assignment in assignments
+    each prop in [{ "maximaler Preis (€"priceMax")": "priceMax" }]
+        each value, key in prop
+            p #{key}: #{assignment[value]}

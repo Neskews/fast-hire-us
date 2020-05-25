@@ -9,7 +9,7 @@ import { AssignmentSchema } from './schemas/assignment.schema';
 @Module({
   providers: [AssignmentService],
   imports: [
-    RequestModule,
+    forwardRef(() => RequestModule),
     forwardRef(() => BandModule),
     MongooseModule.forFeature([{name: "Assignment", schema: AssignmentSchema}])
   ],

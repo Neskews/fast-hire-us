@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="de")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=500, initial-scale=1.0")
+        meta(name="description", content="Jetzt DIE Band für deine Veranstaltung finden")
+        title Hire Us
+        style
+            include ../styles/main.css
+            include ../styles/background.css
+            include ../styles/submit.css
+            include ../styles/heading.css
+            include ../styles/section.css
+            include ../styles/form.css
+    body
+        include ../_header
+        main
+            section
+                h2 Login
+                p Du hast bereits eine Anfrage gestellt? Hier den aktuellen Status abfragen.
+                form(method="POST" action="/request/dashboard")
+                    label
+                        | E-Mail-Adresse
+                        input(type="email" name="email" placeholder="Max.Muster@example.com" required)
+                    input(type="submit" value="einloggen")

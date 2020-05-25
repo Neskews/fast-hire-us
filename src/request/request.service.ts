@@ -9,9 +9,7 @@ import { Urified } from 'src/interfaces/Urified.interface';
 export class RequestService implements Urified {
     constructor(
         @InjectModel("Request") private requestmodel: Model<Request>
-    ) {
-        
-    }
+    ) {}
 
     async read() {
         return await this.requestmodel.find();
@@ -27,7 +25,12 @@ export class RequestService implements Urified {
         return createdRequest.save();
     }
 
+    async findByEmail(email: string) {
+        return await this.requestmodel.find({ email });
+    }
+
     getUri() {
         return `org.hireus:request:${v4()}`;
     }
+
 }
